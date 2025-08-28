@@ -1,31 +1,37 @@
 package org.model;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.time.LocalDate;
+import java.util.List;
 
 public class Modelo {
 
     private long id;
     private String nome;
-    private Date anoModelo;
+    private LocalDate anoModelo;
     private int qtModelos;
+    private List<Veiculo> veiculos;
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     // CONSTRUTORES
 
     public Modelo() {
         this.id = 0;
         this.nome = "";
-        this.anoModelo = new Date();
+        this.anoModelo = LocalDate.now();
+        this.veiculos = new ArrayList<>();
     }
-    public Modelo(long id, String nome, Date anoModelo, int qtModelos) {
+    public Modelo(long id, String nome, LocalDate anoModelo, int qtModelos) {
         this.id = id;
         this.nome = nome;
         this.anoModelo = anoModelo;
         this.qtModelos = qtModelos;
+        this.veiculos = new ArrayList<>();
     }
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
     public long getId() {
+
         return id;
     }
 
@@ -41,11 +47,11 @@ public class Modelo {
         this.nome = nome;
     }
 
-    public Date getAnoModelo() {
+    public LocalDate getAnoModelo() {
         return anoModelo;
     }
 
-    public void setAnoModelo(Date anoModelo) {
+    public void setAnoModelo(LocalDate anoModelo) {
         this.anoModelo = anoModelo;
     }
 
@@ -56,4 +62,13 @@ public class Modelo {
     public void setQtModelos(int qtModelos) {
         this.qtModelos = qtModelos;
     }
+
+    public List<Veiculo> getVeiculo() {
+        return veiculos;
+    }
+
+    public void setVeiculos(List<Veiculo> veiculos) {
+        this.veiculos = veiculos;
+    }
 }
+

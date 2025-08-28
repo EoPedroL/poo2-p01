@@ -1,23 +1,24 @@
 package org.model;
 
-import java.util.Date;
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class Manutencao {
     private long id;
     private String descricao;
-    private Date data;
-    private float custo;
+    private LocalDate data;
+    private BigDecimal custo;
     //+++++++++++++++++++++++++++++++
     // CONSTRUTOR
 
     public Manutencao() {
         this.id = 0;
         this.descricao = "";
-        this.data = new Date();
-        this.custo = 0;
+        this.data = LocalDate.now();
+        this.custo = BigDecimal.ZERO;
     }
 
-    public Manutencao(long id, String descricao, Date data, float custo) {
+    public Manutencao(long id, String descricao, LocalDate data, BigDecimal custo) {
         this.id = id;
         this.descricao = descricao;
         this.data = data;
@@ -26,14 +27,17 @@ public class Manutencao {
     //++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     public long getId() {
+
         return id;
     }
 
     public void setId(long id) {
+
         this.id = id;
     }
 
     public String getDescricao() {
+
         return descricao;
     }
 
@@ -41,19 +45,23 @@ public class Manutencao {
         this.descricao = descricao;
     }
 
-    public Date getData() {
+    public LocalDate getData() {
+
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(LocalDate data) {
+
         this.data = data;
     }
 
-    public float getCusto() {
+    public BigDecimal getCusto() {
+
         return custo;
     }
 
-    public void setCusto(float custo) {
+    public void setCusto(BigDecimal custo) {
+
         this.custo = custo;
     }
 }
